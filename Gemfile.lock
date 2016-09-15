@@ -247,6 +247,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  ae_page_objects
   acts-as-taggable-on (~> 6.0)
   bootstrap (~> 4.3, >= 4.3.1)
   ae_page_objects
