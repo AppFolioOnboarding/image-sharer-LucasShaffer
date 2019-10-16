@@ -7,6 +7,15 @@ class ImagesController < ApplicationController
   def new; end
 
   def create
-    render 'new'
+    @image = Image.new(image_params)
+
+    @image.save
+    redirect_to @image
+  end
+
+  private
+
+  def image_params
+    params.require(:image).permit(:url)
   end
 end
