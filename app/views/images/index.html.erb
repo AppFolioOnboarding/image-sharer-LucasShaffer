@@ -1,0 +1,10 @@
+<h1>Welcome to Image Share!</h1>
+
+<%= link_to 'Add an Image', new_image_path %>
+<table>
+  <% @images.order(created_at: :desc).each do |img| %>
+    <tr>
+      <td><%= image_tag img.url %></td>
+    </tr>
+  <% end %>
+</table>
