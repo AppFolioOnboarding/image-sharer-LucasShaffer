@@ -1,6 +1,6 @@
 <%= render 'navbar' %>
 
-<h1>Welcome to Image Share!</h1>
+<h1 id="page-header">Welcome to Image Share!</h1>
 
 <% @images.order(created_at: :desc).each do |img| %>
   <div class="card">
