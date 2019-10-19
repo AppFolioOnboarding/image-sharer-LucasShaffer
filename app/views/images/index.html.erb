@@ -5,3 +5,5 @@
 <% @images.order(created_at: :desc).each do |img| %>
   <%= render 'image', img: img %>
 <% end %>
+
+<%= render 'footer' %>
