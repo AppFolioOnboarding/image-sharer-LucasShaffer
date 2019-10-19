@@ -1,13 +1,11 @@
 <%= render 'navbar' %>
+<h1 class="text-center">Add a new Image</h1>
 
-<h1 id="page-header">Add a new Image</h1>
-
-<%= simple_form_for @image, html:{id: 'image_form'}, url: images_path do |form| %>
+<%= simple_form_for @image, html:{class: 'mx-auto w-75'}, url: images_path do |form| %>
   <%= form.error_notification %>
 
   <%= form.input :url, label: 'Image URL:' %>
 
   <%= form.button :submit, class: 'btn btn-primary' %>
 <% end %>
-
 <%= render 'footer' %>

@@ -1,9 +1,9 @@
 <%= render 'navbar' %>
+<div class="d-flex flex-column justify-content-center">
+  <h1 class="text-center">Welcome to Image Share!</h1>
 
-<h1 id="page-header">Welcome to Image Share!</h1>
-
-<% @images.order(created_at: :desc).each do |img| %>
-  <%= render 'image', img: img %>
-<% end %>
-
+  <% @images.order(created_at: :desc).each do |img| %>
+   <%= render 'image', img: img %>
+  <% end %>
+</div>
 <%= render 'footer' %>
