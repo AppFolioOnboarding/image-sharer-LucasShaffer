@@ -6,5 +6,6 @@
     <% if current_page? root_path %>
       <a href="<%= image_path img.id %>" class="btn btn-primary">View Image</a>
     <% end %>
+    <a href="<%= edit_image_path img.id %>" class="btn btn-edit">Edit Image</a>
   </div>
 </div>
