@@ -1,4 +1,4 @@
-<%= simple_form_for @image, html:{class: 'mx-auto w-75'}, url: images_path do |form| %>
+<%= simple_form_for @image, html:{class: 'mx-auto w-75'} do |form| %>
   <%= form.error_notification %>
 
   <%= form.input :url, label: 'Image URL:' %>
