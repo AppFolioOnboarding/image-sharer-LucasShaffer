@@ -2,6 +2,7 @@ class ImagesController < ApplicationController
 
   def index
     @images = Image.all
+    @images = @images.tagged_with(params[:filter]) unless params[:filter].blank?
   end
 
   def show
