@@ -25,3 +25,4 @@ en:
     attributes:
       image:
         url: 'URL'
+        tag_list: 'Tag List'
