@@ -5,12 +5,10 @@ module PageObjects
         node.find('img')[:src]
       end
 
-      def tags
-        # TODO
-      end
-
       def click_tag!(tag_name)
-        # TODO
+        node.click_on(tag_name)
+        stale!
+        window.change_to(IndexPage)
       end
     end
   end

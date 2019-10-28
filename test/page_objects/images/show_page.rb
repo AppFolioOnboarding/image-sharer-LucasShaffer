@@ -3,26 +3,35 @@ module PageObjects
     class ShowPage < PageObjects::Document
       path :image
 
+      element :success
+      collection :all_tags, locator: "#js-card-body" do
+      end
+
       def image_url
-        # TODO
+        node.find('img')[:src]
       end
 
       def tags
-        # TODO
+        all_tags.text.split(', ')
       end
 
       def delete
-        # TODO
+        node.find('#js-delete-button').click
         yield node.driver.browser.switch_to.alert
       end
 
       def delete_and_confirm!
-        # TODO
+        node.find('#js-delete-button').click
+        modal = node.driver.browser.switch_to.alert
+        modal.accept
+        stale!
         window.change_to(IndexPage)
       end
 
       def go_back_to_index!
-        # TODO
+        node.find("#js-home-button").click
+        stale!
+        window.change_to(IndexPage)
       end
     end
   end
