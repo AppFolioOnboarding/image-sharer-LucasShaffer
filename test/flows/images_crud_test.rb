@@ -33,7 +33,7 @@ class ImagesCrudTest < FlowTestCase
     ])
 
     images_index_page = PageObjects::Images::IndexPage.visit
-    assert_equal 4, images_index_page.images.count
+    assert_equal 2, images_index_page.images.count
     assert images_index_page.showing_image?(url: ugly_cat_url)
     assert images_index_page.showing_image?(url: cute_puppy_url)
 
@@ -47,7 +47,7 @@ class ImagesCrudTest < FlowTestCase
     end
     images_index_page = image_show_page.delete_and_confirm!
     assert_equal 'You have successfully deleted the image.', images_index_page.success.text
-    assert_equal 3, images_index_page.images.count
+    assert_equal 1, images_index_page.images.count
 
     assert_not images_index_page.showing_image?(url: ugly_cat_url)
     assert images_index_page.showing_image?(url: cute_puppy_url)
@@ -73,6 +73,6 @@ class ImagesCrudTest < FlowTestCase
     assert_not images_index_page.showing_image?(url: cat_url)
 
     images_index_page = images_index_page.clear_tag_filter!
-    assert_equal 5, images_index_page.images.count
+    assert_equal 3, images_index_page.images.count
   end
 end
