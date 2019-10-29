@@ -22,6 +22,7 @@ class ImagesController < ApplicationController
 
     if @image.save
       redirect_to @image
+      flash[:notice] = 'You have successfully added an image.'
     else
       render 'new'
     end
@@ -35,6 +36,14 @@ class ImagesController < ApplicationController
     else
       render 'edit'
     end
+  end
+
+  def destroy
+    @image = Image.find(params[:id])
+    @image.destroy
+
+    redirect_to images_path
+    flash[:success] = 'You have successfully deleted the image.'
   end
 
   private

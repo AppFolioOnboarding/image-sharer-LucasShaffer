@@ -1,7 +1,11 @@
-<div class="d-flex flex-column justify-content-center">
+<div class="d-flex flex-column justify-content-center js-index-page">
   <h1 class="text-center">Welcome to Image Share!</h1>
   <% if @images.empty? %>
-    <h2 class="text-danger text-center">There are no images with that tag.</h2>
+    <h2 class="alert alert-danger text-center">There are no images with that tag.</h2>
+  <% end %>
+
+  <% if flash[:success] %>
+    <div class="alert alert-success text-center" id="success"><%= flash[:success] %></div>
   <% end %>
 
   <% @images.order(created_at: :desc).each do |img| %>

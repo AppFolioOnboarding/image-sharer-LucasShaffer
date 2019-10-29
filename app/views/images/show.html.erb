@@ -1,3 +1,6 @@
+<% if flash[:notice] %>
+  <div class="notice" id="success"><%= flash[:notice] %></div>
+<% end %>
 <div class="d-flex flex-column justify-content-center">
   <%= render 'image', img: @image %>
 </div>

@@ -25,6 +25,8 @@ gem 'simple_form'
 
 gem 'acts-as-taggable-on', '~> 6.0'
 
+gem 'pry'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platform: :mri
@@ -47,6 +49,7 @@ group :production do
 end
 
 group :test do
+  gem 'ae_page_objects'
   gem 'capybara'
   gem 'selenium-webdriver'
 end
